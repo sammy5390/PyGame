@@ -19,7 +19,8 @@ class Player(pygame.sprite.Sprite):
 		self.image=pygame.Surface((50,40))
 		self.image.fill(GREEN)
 		self.rect=self.image.get_rect()
-		self.rect.centerx=(WIDTH/2,HEIGHT/2)
+		self.rect.centerx=WIDTH/2
+		self.rect.bottom=HEIGHT -10
 		self.speedx=8
 	def update(self):
 		key_pressed=pygame.key.get_pressed()
