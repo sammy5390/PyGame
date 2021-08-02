@@ -1,5 +1,6 @@
 import pygame
 import random
+import os
 
 FPS=60
 
@@ -16,6 +17,12 @@ pygame.init()
 screen=pygame.display.set_mode((WIDTH,HEIGHT))
 pygame.display.set_caption("Galaxy")
 clock=pygame.time.Clock()
+
+# Load picture
+background_img=pygame.image.load(os.path.join("img", "background.png")).convert()
+player_img=pygame.image.load(os.path.join("img", "player.png")).convert()
+rock_img=pygame.image.load(os.path.join("img", "rock.png")).convert()
+bullet_img=pygame.image.load(os.path.join("img", "bullet.png")).convert()
 
 class Player(pygame.sprite.Sprite):
 	def __init__(self):
@@ -118,6 +125,7 @@ while running:
 	
 	# display
 	screen.fill(BLACK)
+	screen.blit(background_img, (0,0))
 	all_sprites.draw(screen)
 	pygame.display.update()
 			
